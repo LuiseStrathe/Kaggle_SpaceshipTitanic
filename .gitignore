@@ -1,0 +1,4 @@
+*.npy
+results/*.csv
+data/raw/*.csv
+venv/*

@@ -1,0 +1,11 @@
+,version_ID,version_note,timestamp
+0,v1_0,Initial version,on 2022_09_20 at 17_04
+1,v1_1,no more booleans,on 2022_09_21 at 21_10
+2,v1_2,dtype 32s,on 2022_09_21 at 21_38
+3,v1_2,dtype 32s,on 2022_09_21 at 21_51
+4,v1_3,name and cabin added,on 2022_09_22 at 04_08
+5,v1_4,name and cabin added,on 2022_09_22 at 04_43
+6,v1_4,name and cabin added,on 2022_09_22 at 04_57
+7,v1_4,name and cabin added,on 2022_09_22 at 05_02
+8,v1_5,passenger and spendings added,on 2022_09_22 at 15_24
+9,v2_0,reduced features,on 2022_09_22 at 15_29
