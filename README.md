@@ -9,6 +9,10 @@ The Titanic dataset is a classic dataset for machine learning. It is a binary cl
 <br>
 
 ## Data
+
+The Titanic dataset is one of the most popular datasets for beginners in machine learning. The goal of this project is to predict whether a passenger on the Titanic survived or not. The data is split into two datasets, a training dataset and a test dataset (which is for the later rating). The training dataset contains the labels, i.e. whether the passenger survived or not. The test dataset does not contain the labels, and the goal is to use the training dataset to train a model that can predict the labels for the test dataset.
+
+The data used in this project can be found on Kaggle: https://www.kaggle.com/c/titanic/data
 The data is split into two groups:
 - training set (train.csv) --> used for training, validation and testing
 - test set (test.csv) --> for result submission, no labels given
@@ -17,47 +21,64 @@ The data is split into two groups:
 <br>
 
 ## Model
-I used two models:
-- Boosted Random Forest (XGBoost)   
-    SCORE: 0.79120
-- Neural Network (Keras)            
-    SCORE: 0.77905
-(best score so far: 0.87023)
 
+I used the following machine learning methods:
+(scores shown are from KAGGLE rank)
+
+Boosted Random Forest   XGBoost     SCORE: 0.79120
+Deep Neural Network     KERAS       SCORE: 0.77905
+
+The code is written in python and uses pandas and numpy for data manipulation and scikit-learn for the machine learning algorithms.
 <br>
 
 ## Structure
 DATA
 - raw
-    Data provided by Kaggle
-- processed
-    preprocessed data (versioned data sets)
-    can be used for training, validation and testing (*.npy)
+    - train.csv contains the training data
+    - test.csv contains the test data
+    - sample_submission.csv is a template
+- preprocessed  
+    - Contains already preprocessed data 
+    - Numpy-arrays are direct inputs for the models
 
 MODELS
-- models
-    pickled models, incl. information about data and performance
-- models_overview
-    information about the available models and their performance
+- prediction overview
+    - contains info about model performance 
+    - accuracy is based on test data (from train_csv)
+    - corresponding to the saved models
+- models        
+    - pickeled model versions
 
 NOTEBOOKS
-- data analysis
-    - notebooks for data pre-analysis
+- data_analysis
+    - pre-viewing and analysis of data 
+    - testing of preprocessing pipeline
 - preprocessing
-    - preprocessing pipeline of the data
-    - processes and saves data of one preprocessing version
+    - contains preprocessing pipeline
+    - ensures the equal preprocessing of one data version
+    - avoids data leakage
+    - TRAIN-csv --> train, val and test set
+    - TEST-csv --> generation of results for submission
+    - saves a new data version
 - forests
-    - training and testing of the random forest models with XGBoost
-    - traines and saves model based on data version
-- neural_networks
-    - training and testing of the neural network models with Keras
-    - traines and saves model based on data version
-
-RESULTS
-- reuslts: submission files for the Kaggle competition
+    - XGB random forests model
+    - run on specific data version from file
+    - model saved with training info
+- NN_keras
+    - Deep Neural Network 
+    - build with Tensorflow and keras
+    - model saved with training info
+- results
+    - generates a submission file 
+    - based on a chosen model and preprocessing version
 
 <br>
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+
+
+
